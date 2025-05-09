@@ -58,7 +58,33 @@
 
 ### Steps:
 
-* **Flag:**
+1. Firstly lets run `file` on my directory 
+```bash
+file *
+```
+>> we notice that only Tiger.png is the only png file and the rest are webp images
+
+2. Lets examine tiger.png by running `xxd`
+```bash
+xxd Tiger.png
+```
+
+3. We notice at the last few bytes, the flag is there!
+```bash
+0008e640: 4344 4400 0000 0000 0000 0000 0000 0000  CDD.............
+0008e650: 4332 3000 0000 0000 0000 0000 0000 0000  C20.............
+0008e660: 3235 7b00 0000 0000 0000 0000 0000 0000  25{.............
+0008e670: 614e 6900 0000 0000 0000 0000 0000 0000  aNi.............
+0008e680: 4d61 3100 0000 0000 0000 0000 0000 0000  Ma1.............
+0008e690: 5f46 6100 0000 0000 0000 0000 0000 0000  _Fa.............
+0008e6a0: 526d 5f00 0000 0000 0000 0000 0000 0000  Rm_.............
+0008e6b0: 5332 4300 0000 0000 0000 0000 0000 0000  S2C.............
+0008e6c0: 7245 7400 0000 0000 0000 0000 0000 0000  rEt.............
+0008e6d0: 7d                                       }
+
+```
+
+* **Flag:** `CDDC2025{aNiMa1_FaRm_S2CrEt}`
 
 ## Challenge 7 
 
