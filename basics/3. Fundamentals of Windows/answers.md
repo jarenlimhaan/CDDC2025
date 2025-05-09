@@ -89,17 +89,55 @@ xxd Tiger.png
 ## Challenge 7 
 
 ### Steps:
+1. First run `start.exe`
+```bash
+For linux:
+wine start.exe
+```
+2. Since, bruteforcing different combinations of `philb` doesn't work for `steghide`, we try to grep through the registries
+```bash
+grep -i -E 'password|philb|chill' ~/.wine/*.reg
+```
+3. We notice the flag after we do a grep on the registry files 
+```bash
+/home/topiko/.wine/system.reg:@="ChillGuy File"
+/home/topiko/.wine/system.reg:@="C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -ExecutionPolicy Bypass -Command \"Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('CDDC2025{Chill111111111111111_9uy}', 'Notification')\""
+/home/topiko/.wine/system.reg:[Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_HTTP_USERNAME_PASSWORD_DISABLE] 1746780347
+/home/topiko/.wine/system.reg:[Software\\Wow6432Node\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_HTTP_USERNAME_PASSWORD_DISABLE] 1746780363
+```
 
-* **Flag:**
+* **Flag:** `CDDC2025{Chill111111111111111_9uy}`
 
 ## Challenge 8 
 
 ### Steps:
+1. We are given a Hisotry file which is usually a sqlite3 db
+2. Write a bash script to grep all related `cddc` row data fetched from all tables - `find_history_flag.sh`
+3. We notice a particular suspicious url with `flag` url params
+```bash
+403|http://cddc.dstabrainhack.com/?id=12345&user=johndoe&email=johndoe%40email.com&age=25&gender=male&country=US&city=NewYork&zip=10001&phone=123-456-7890&dob=1995-08-15&status=active&balance=1520.75&points=2500&membership=premium&last_login=2025-03-30T14%3A30%3A00Z&referrer=google.com&session_id=abcde12345&cart_id=xyz67890&
 
-* **Flag:**
+fl4g=d08df2b8de382d42c60e116368c3ee799e00f286&device=mobile&ip=192.168.1.1&browser=chrome&os=windows&app_version=1.2.3&subscription=true&newsletter=false&timezone=UTC-5&language=en&theme=dark&tracking_id=trk_98765&discount_code=SPRING50||1|1|13380368653775195|0
+```
+4. By plugging it into the flag format, we get the flag!
+
+* **Flag:** `CDDC2025{d08df2b8de382d42c60e116368c3ee799e00f286}`
 
 ## Challenge 9 
 
 ### Steps:
 
-* **Flag:**
+1. Based on the clues, we must convert the excel to zip file, as  they are actually ZIP archives under the hood, structured according to the Office Open XML standard.
+```bash
+mv excel_hidden_flag.xlsx yourfile.zip
+```
+2. Unzip the converted zip file
+```bash
+unzip yourfile.zip -d extracted_excel 
+```
+3. grep the flag pattern within the extracted diretcory 
+```bash
+ grep -r "CDDC2025{" extracted_excel/
+```
+
+* **Flag:** `CDDC2025{3xcEl_H1dden_fl4g}`
