@@ -1,0 +1,2 @@
+Congratulation! flag is CDDC2025{pR1nt_4nD_g0}
+0024:fixme:kernelbase:AppPolicyGetProcessTerminationMethod FFFFFFFA, 0051FEB8

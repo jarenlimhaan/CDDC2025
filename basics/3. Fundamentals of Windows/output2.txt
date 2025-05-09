@@ -1,0 +1,3 @@
+Reg path: Software\\CTF_Easy
+Flag written: CDDC2025{ReG_hAcK}
+0024:fixme:kernelbase:AppPolicyGetProcessTerminationMethod FFFFFFFA, 0051FEB8
