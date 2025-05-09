@@ -1,0 +1,6 @@
+0168:fixme:powershell:wmain stub.
+0168:fixme:powershell:wmain argv[0] L"C:\\windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe"
+0168:fixme:powershell:wmain argv[1] L"-WindowStyle"
+0168:fixme:powershell:wmain argv[2] L"Hidden"
+0168:fixme:powershell:wmain argv[3] L"-Command"
+0168:fixme:powershell:wmain argv[4] L"Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.MessageBox]::Show('Successfully Continue with the problem-solving process.', 'Success', 'OK', 'Information')"
