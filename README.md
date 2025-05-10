@@ -19,8 +19,8 @@ This section contains 8 topics and within each topic there are challenges.
 3. [Fundamentals of Windows](basics/3.%20Fundamentals%20of%20Windows/answers.md)
 4. [Introduction to Networking](basics/4.%20Introduction%20to%20Networking/answers.md)
 5. [Introduction to Malware](basics/5.%20Introduction%20to%20Malware/answers.md)
-<!-- 6. [Introduction to Cryptography]()
-7. [Introduction to Web Security]()
-8. [Introduction to Hardware CWE]() -->
+6. [Introduction to Cryptography](basics/6.%20Introduction%20to%20Cryptography/answers.md)
+7. [Introduction to Web Security](basics/7.%20Introduction%20to%20Web%20Security/answers.md)
+8. [Introduction to Hardware CWE](basics/8.%20Introduction%20to%20Hardware%20CWE/)
 
 
